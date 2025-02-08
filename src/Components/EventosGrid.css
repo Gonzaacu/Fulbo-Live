@@ -1,0 +1,45 @@
+.eventos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .evento-card {
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  .evento-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .evento-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .evento-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .ver-evento {
+    background: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .ver-evento:hover {
+    background: darkred;
+  }
+  
