@@ -1,56 +1,24 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
-import { db } from "./firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./App.css";
+import Player from "./Components/Player.jsx";
+import canales from "./data/canales"; // Importamos los datos locales
 
 function App() {
   const [eventos, setEventos] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function obtenerEventos() {
-      try {
-        console.log("📡 Consultando Firestore...");
+    // Cargamos los eventos desde los datos locales
+    const eventosArray = Object.entries(canales).map(([nombre, enlaces]) => ({
+      nombre: nombre, // Usamos el nombre de la clave como nombre del evento
+      enlace: enlaces[0], // Tomamos el primer enlace
+      imagen: `https://source.unsplash.com/300x200/?soccer`, // Imagen aleatoria de soccer
+    }));
 
-        const querySnapshot = await getDocs(collection(db, "Canales")); 
-        let eventosArray = [];
-
-        querySnapshot.forEach((doc) => {
-  let data = doc.data();
-  console.log("📄 Documento en Firestore:", data);
-
-  Object.keys(data).forEach((nombreCanal) => {
-    let enlaces = data[nombreCanal];
-
-    try {
-      if (typeof enlaces === "string") {
-        enlaces = JSON.parse(enlaces); // 🔥 Convertir string en array
-      }
-
-      if (Array.isArray(enlaces) && enlaces.length > 0) {
-        eventosArray.push({
-          nombre: nombreCanal,
-          enlace: enlaces[0].trim(),
-          imagen: `https://source.unsplash.com/300x200/?soccer`,
-        });
-      }
-    } catch (error) {
-      console.error(`❌ Error procesando los enlaces de ${nombreCanal}:`, error);
-    }
-  });
-});
-
-
-        setEventos(eventosArray);
-      } catch (error) {
-        console.error("❌ Error al obtener eventos:", error);
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    obtenerEventos();
+    setEventos(eventosArray);
+    setLoading(false);
   }, []);
 
   return (
@@ -68,9 +36,9 @@ function App() {
                   <img src={evento.imagen} alt={evento.nombre} className="evento-img" />
                   <div className="evento-info">
                     <h3>{evento.nombre}</h3>
-                    <a href={`/player.html?link=${encodeURIComponent(evento.enlace)}`} target="_blank" rel="noopener noreferrer">
+                    <Link to={`/player?name=${encodeURIComponent(evento.nombre)}`}>
                       <button className="ver-evento">Ver Evento</button>
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))
@@ -80,6 +48,10 @@ function App() {
           </div>
         )}
       </div>
+      <Routes>
+        <Route path="/" element={<div>Bienvenido a Fulbo Live</div>} />
+        <Route path="/player" element={<Player />} />
+      </Routes>
     </Router>
   );
 }
