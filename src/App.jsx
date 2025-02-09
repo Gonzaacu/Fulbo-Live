@@ -53,6 +53,7 @@ function App() {
         <Route path="/player" element={<Player />} />
       </Routes>
     </Router>
+
   );
 }
 
