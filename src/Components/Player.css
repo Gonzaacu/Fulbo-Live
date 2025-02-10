@@ -6,8 +6,9 @@
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
-  max-width: 100%;
-  width: 100%; /* Asegura que el video ocupe todo el ancho disponible */
+  max-width: 100%;  /* Limita el tamaño máximo al 100% */
+  width: 100%;      /* El reproductor ocupa el 100% del ancho disponible */
+  height: auto;     /* El alto se ajusta automáticamente para mantener la relación de aspecto */
 }
 
 /* Estilos de los títulos */
@@ -64,6 +65,7 @@ p {
   #videoPlayer {
     width: 100%; /* El video ocupará el 100% del ancho */
     height: auto;
+    max-width: 100%; /* Evita que el video se haga más grande que la pantalla */
   }
 
   h1, h2, h3 {
@@ -82,7 +84,7 @@ p {
 
 @media (max-width: 480px) {
   #videoPlayer {
-    width: 100%;
+    width: 100%; /* El video ocupa todo el ancho */
     height: auto;
   }
 
