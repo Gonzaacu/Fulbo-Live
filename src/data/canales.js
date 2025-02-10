@@ -28,33 +28,6 @@ const canales = {
         "https://embed.sdfgnksbounce.com/embed2/espn.html",
         "https://flow.futbollibre2.online/flow.html?id=espn1"
     ],
-    TNT_Series: [
-      "https://television-libre.net/html/fl/?get=VE5UU2VyaWVz",
-    ],
-    HyH: [
-      "https://television-libre.net/html/fl/?get=RGlzY292ZXJ5SG9tZUhlYWx0aEhE",
-    ],
-    TcL: [
-      "https://television-libre.net/html/fl/?get=VExD",
-    ],
-    History: [
-      "https://television-libre.net/html/fl/?get=SGlzdG9yeUhE"
-    ],
-
-    Space: [
-      "https://television-libre.net/html/fl/?get=U3BhY2U=",
-    ],
-    Start_Channel: [
-      "https://television-libre.net/html/fl/?get=Rk9YSEQ=",
-      "https://nebunexa.co/wsd/?get=STAR_CHANNEL",
-      "https://nebunexa.co/canal/?id=STAR_CHANNEL"
-    ],
-    Disney_channel: [
-      "https://television-libre.net/html/fl/?get=RGlzbmV5Q2hhbm5lbEhE"
-    ],
-    Flow_Music: [
-      "https://television-libre.net/html/fl/?get=Rmxvd19NdXNpY19YUA=="
-    ],
     DirecTV_Sports: [
       "https://futbollibre2.online/embed/iframe.html?get=https://streamtp.live/global2.php?stream=dsports",
       "https://futbollibre2.online/embed/iframe.html?get=https://tucanaldeportivo.org/directvsports.php",
@@ -124,6 +97,38 @@ const canales = {
     TVPublica: [
       "https://la12hd.com/vivo/canal.php?stream=tvpublica",
     ],
+    TNT_Series: [
+      "https://television-libre.net/html/fl/?get=VE5UU2VyaWVz",
+      "https://television-libre.net/html/fl/?get=VE5UU2VyaWVz",
+    ],
+    HyH: [
+      "https://television-libre.net/html/fl/?get=RGlzY292ZXJ5SG9tZUhlYWx0aEhE",
+      "https://television-libre.net/html/fl/?get=RGlzY292ZXJ5SG9tZUhlYWx0aEhE",
+    ],
+    TcL: [
+      "https://television-libre.net/html/fl/?get=VExD",
+      "https://television-libre.net/html/fl/?get=VExD",
+    ],
+    History: [
+      "https://television-libre.net/html/fl/?get=SGlzdG9yeUhE",
+      "https://television-libre.net/html/fl/?get=SGlzdG9yeUhE"
+    ],
+
+    Space: [
+      "https://television-libre.net/html/fl/?get=U3BhY2U=",
+    ],
+    Start_Channel: [
+      "https://television-libre.net/html/fl/?get=Rk9YSEQ=",
+      "https://nebunexa.co/wsd/?get=STAR_CHANNEL",
+      "https://nebunexa.co/canal/?id=STAR_CHANNEL"
+    ],
+    Disney_channel: [
+      "https://television-libre.net/html/fl/?get=RGlzbmV5Q2hhbm5lbEhE"
+    ],
+    Flow_Music: [
+      "https://television-libre.net/html/fl/?get=Rmxvd19NdXNpY19YUA=="
+    ],
+    
   };
   
   export default canales;
