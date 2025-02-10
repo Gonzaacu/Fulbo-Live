@@ -10,6 +10,7 @@ const canales = {
       "https://la12hd.com/vivo/canales.php?stream=tntsports",// anda
       "https://streamdz1.xyz/player/embed.php?channel=tntar",// anda con publi
       "https://tucanaldeportivo.org/tntsports.php",// anda con publi
+      "https://director.mgi9ehlj7z061brnpp28wr2x7n9wvpr10.click/v4/variant/VE1gTdz0mLzRnLv52bt9SMhFjdtM3ajFmc09yNzkTOxQDOxITY3kTL4MGM40COyYGNtYGO0QWLzIWZxUjNzczL.m3u8",
       "https://cdn.sensa.com.ar/live/eds/TNTSports/live_dash_cld/TNTSports.mpd",
       "https://cdn.sensa.com.ar/live/eds/TNTSports/live_dash_cld/TNTSports.mpd?ck=eyJjMjYzNzEwNzllODkyMDZkNjNlMTQ1NDg5M2U4ODFiNiI6ImFkYWMzYzNiMzc3NGU0MTFkNmU0OTcyNGY3ZWEwZWUzIn0=&title=RusticoTV&headers=eyJvcmlnaW4iOiJodHRwczovL3BsYXllci5zZW5zYS5jb20uYXIiLCJyZWZlcmVyIjoiaHR0cHM6Ly9wbGF5ZXIuc2Vuc2EuY29tLmFyLyJ9"
     ],
@@ -55,7 +56,39 @@ const canales = {
       "https://flow.futbollibre2.online/flow.html?id=foxsports3",
       "https://cablevisionflow2.dev.ar/extencion.html?get=Rm94U3BvcnRzM0hE",
       "https://futbollibre2.online/embed/iframe.html?get=https://la10hd.com/vivo/canal.php?stream=foxsports3"
-    ]
+    ],
+    ESPN2: [
+      "https://bgfuzq.fubohd.com/espn2/tracks-v1a1/mono.m3u8?token=8f6996f5ccc43866c94fc232301b0f5b4218fbe0-91-1739253724-1739217724",
+      "",
+
+    ],
+    ESPN3: [
+      "https://c2f2zq.fubohd.com/espn3/mono.m3u8?token=e3d5f571c8cac597332e3cd6a4817c9a63ee4c19-29-1739254273-1739218273",
+    ],
+    ESPN4: [
+      "https://cgxheq.fubohd.com/espn4/mono.m3u8?token=ae87ec778603e7a1f20f277fb52e26e41ad1bfd3-b6-1739254366-1739218366",
+    ],
+    ESPN5: [
+      "https://bmf0aw9u.fubohd.com/espn5/tracks-v1a1/mono.m3u8?token=5b98f025d1b6973b495c947f9aaca112c911e33e-3b-1739254446-1739218446",
+    ],
+    ESPN6: [
+      "https://agl2zq.fubohd.com/espn6/mono.m3u8?token=1eda90b5a82694c0c4865be14f8b5b19353902da-48-1739254526-1739218526",
+    ],
+    ESPN7: [
+      "https://bmv3.fubohd.com/espn7/tracks-v1a1/mono.m3u8?token=8f78fb81a04f3e4d30bc5b0ba768712cf8425484-f6-1739254564-1739218564",
+    ],
+    Dsports: [
+      "https://bmv3.fubohd.com/dsports/tracks-v1a1/mono.m3u8?token=94dca25481f4e4c3c81e0526ad5c5c974f5b62d2-af-1739254694-1739218694",
+    ],
+    Dsports2: [
+      "https://c2f2zq.fubohd.com/dsports2/tracks-v1a1/mono.m3u8?token=6ef9c6393cabf12036de29411208deaafb944b07-b2-1739254749-1739218749",
+      "https://la12hd.com/vivo/canal.php?stream=dsports2",
+    ],
+    Dsportsplus: [
+      "https://la12hd.com/vivo/canal.php?stream=dsportsplus",
+      "https://a2lja3m.fubohd.com/dsportsplus/mono.m3u8?token=37245fd2ec172899dcfb0c2a22133fbe8a677979-e0-1739254785-1739218785",
+    ],
+    
   };
   
   export default canales;
