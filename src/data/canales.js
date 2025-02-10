@@ -1,8 +1,8 @@
 const canales = {
     TyC_Sports: [
-      "https://ja.periquitopan.store/tyc/tracks-v1a1/mono.m3u8?md5=fIldUpJzXO8DGVFPwnlpjQ&expires=1739139219",//no anda
+      "https://la12hd.com/vivo/canal.php?stream=tycsports",
       "https://flow.futbollibre2.online/flow.html?id=tyc",/* anda con publi*/
-      "https://embed.sdfgnksbounce.com/embed2/tycsports.html"// no anda
+      ""
     ],
     TNT_Sports: [
       "https://director.mgi9ehlj7z061brnpp28wr2x7n9wvpr10.click/v4/variant/VE1gTdz0mLzRnLv52bt9SMhFjdtM3ajFmc09yNzkTOxQDOxITY3kTL4MGM40COyYGNtYGO0QWLzIWZxUjNzczL.m3u8",// anda
@@ -27,6 +27,33 @@ const canales = {
         "https://la12hd.com/vivo/canales.php?stream=espn",
         "https://embed.sdfgnksbounce.com/embed2/espn.html",
         "https://flow.futbollibre2.online/flow.html?id=espn1"
+    ],
+    TNT_Series: [
+      "https://television-libre.net/html/fl/?get=VE5UU2VyaWVz",
+    ],
+    HyH: [
+      "https://television-libre.net/html/fl/?get=RGlzY292ZXJ5SG9tZUhlYWx0aEhE",
+    ],
+    TcL: [
+      "https://television-libre.net/html/fl/?get=VExD",
+    ],
+    History: [
+      "https://television-libre.net/html/fl/?get=SGlzdG9yeUhE"
+    ],
+
+    Space: [
+      "https://television-libre.net/html/fl/?get=U3BhY2U=",
+    ],
+    Start_Channel: [
+      "https://television-libre.net/html/fl/?get=Rk9YSEQ=",
+      "https://nebunexa.co/wsd/?get=STAR_CHANNEL",
+      "https://nebunexa.co/canal/?id=STAR_CHANNEL"
+    ],
+    Disney_channel: [
+      "https://television-libre.net/html/fl/?get=RGlzbmV5Q2hhbm5lbEhE"
+    ],
+    Flow_Music: [
+      "https://television-libre.net/html/fl/?get=Rmxvd19NdXNpY19YUA=="
     ],
     DirecTV_Sports: [
       "https://futbollibre2.online/embed/iframe.html?get=https://streamtp.live/global2.php?stream=dsports",
@@ -58,38 +85,46 @@ const canales = {
       "https://futbollibre2.online/embed/iframe.html?get=https://la10hd.com/vivo/canal.php?stream=foxsports3"
     ],
     ESPN2: [
+      "https://la12hd.com/vivo/canal.php?stream=espn2",
       "https://bgfuzq.fubohd.com/espn2/tracks-v1a1/mono.m3u8?token=8f6996f5ccc43866c94fc232301b0f5b4218fbe0-91-1739253724-1739217724",
-      "",
-
     ],
     ESPN3: [
+      "https://la12hd.com/vivo/canal.php?stream=espn3",
       "https://c2f2zq.fubohd.com/espn3/mono.m3u8?token=e3d5f571c8cac597332e3cd6a4817c9a63ee4c19-29-1739254273-1739218273",
     ],
     ESPN4: [
+      "https://la12hd.com/vivo/canal.php?stream=espn4",
       "https://cgxheq.fubohd.com/espn4/mono.m3u8?token=ae87ec778603e7a1f20f277fb52e26e41ad1bfd3-b6-1739254366-1739218366",
     ],
     ESPN5: [
+      "https://la12hd.com/vivo/canal.php?stream=espn5",
       "https://bmf0aw9u.fubohd.com/espn5/tracks-v1a1/mono.m3u8?token=5b98f025d1b6973b495c947f9aaca112c911e33e-3b-1739254446-1739218446",
     ],
     ESPN6: [
+      "https://la12hd.com/vivo/canal.php?stream=espn6",
       "https://agl2zq.fubohd.com/espn6/mono.m3u8?token=1eda90b5a82694c0c4865be14f8b5b19353902da-48-1739254526-1739218526",
     ],
     ESPN7: [
+      "https://la12hd.com/vivo/canal.php?stream=espn7",
       "https://bmv3.fubohd.com/espn7/tracks-v1a1/mono.m3u8?token=8f78fb81a04f3e4d30bc5b0ba768712cf8425484-f6-1739254564-1739218564",
     ],
     Dsports: [
+      "https://la12hd.com/vivo/canal.php?stream=dsports",
       "https://bmv3.fubohd.com/dsports/tracks-v1a1/mono.m3u8?token=94dca25481f4e4c3c81e0526ad5c5c974f5b62d2-af-1739254694-1739218694",
     ],
     Dsports2: [
-      "https://c2f2zq.fubohd.com/dsports2/tracks-v1a1/mono.m3u8?token=6ef9c6393cabf12036de29411208deaafb944b07-b2-1739254749-1739218749",
       "https://la12hd.com/vivo/canal.php?stream=dsports2",
+      "https://c2f2zq.fubohd.com/dsports2/tracks-v1a1/mono.m3u8?token=6ef9c6393cabf12036de29411208deaafb944b07-b2-1739254749-1739218749",
+      
     ],
     Dsportsplus: [
       "https://la12hd.com/vivo/canal.php?stream=dsportsplus",
       "https://a2lja3m.fubohd.com/dsportsplus/mono.m3u8?token=37245fd2ec172899dcfb0c2a22133fbe8a677979-e0-1739254785-1739218785",
     ],
-    
+    TVPublica: [
+      "https://la12hd.com/vivo/canal.php?stream=tvpublica",
+    ],
   };
   
   export default canales;
-  
+
