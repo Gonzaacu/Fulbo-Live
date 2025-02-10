@@ -1,45 +1,62 @@
 .eventos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+  gap: 20px;
+  padding: 20px;
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Para tablets */
+@media (max-width: 900px) {
+  .eventos-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
   }
-  
-  .evento-card {
-    background-color: #222;
-    color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.3s ease;
+}
+
+/* Para móviles */
+@media (max-width: 600px) {
+  .eventos-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
   }
-  
-  .evento-card:hover {
-    transform: scale(1.05);
-  }
-  
-  .evento-img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-  }
-  
-  .evento-info {
-    padding: 15px;
-    text-align: center;
-  }
-  
-  .ver-evento {
-    background: red;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .ver-evento:hover {
-    background: darkred;
-  }
-  
+}
+
+.evento-card {
+  background-color: #222;
+  color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.evento-card:hover {
+  transform: scale(1.05);
+}
+
+.evento-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.evento-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.ver-evento {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.ver-evento:hover {
+  background: darkred;
+}

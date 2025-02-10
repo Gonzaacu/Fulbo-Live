@@ -1,4 +1,68 @@
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+import Player from "./Components/Player.jsx";
+import canales from "./data/canales"; // Importamos los datos locales
+
+function Home() {
+  const [eventos, setEventos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const eventosArray = Object.entries(canales).map(([nombre, enlaces]) => ({
+      nombre: nombre,
+      enlace: enlaces[0],
+      imagen: `https://source.unsplash.com/300x200/?soccer`, // Imagen aleatoria de fútbol
+    }));
+
+    setEventos(eventosArray);
+    setLoading(false);
+  }, []);
+
+  return (
+    <div className="container">
+      <h1 className="titulo">⚽ Fulbo Live</h1>
+
+      {loading ? (
+        <p className="cargando">Cargando eventos...</p>
+      ) : (
+        <div className="eventos-grid">
+          {eventos.length > 0 ? (
+            eventos.map((evento, index) => (
+              <div key={index} className="evento-card">
+                <img src={evento.imagen} alt={evento.nombre} className="evento-img" />
+                <div className="evento-info">
+                  <h3>{evento.nombre}</h3>
+                  <Link to={`/player?name=${encodeURIComponent(evento.nombre)}`}>
+                    <button className="ver-evento">Ver Evento</button>
+                  </Link>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="sin-eventos">No hay eventos disponibles.</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router basename="/Fulbo-Live">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/player" element={<Player />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+/*
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./App.css";
@@ -58,3 +122,5 @@ function App() {
 }
 // anda
 export default App;
+
+*/

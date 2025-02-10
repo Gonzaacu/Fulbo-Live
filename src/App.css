@@ -1,33 +1,62 @@
-.container {
-  text-align: center;
-  background-color: #121212;
+body {
+  background-color: #0b0b0b;
   color: white;
-  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.navbar {
+  background: #d32f2f;
+  padding: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px; /* Ajuste del ancho máximo player */
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.titulo {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.cargando {
-  font-size: 1.2rem;
-  color: #ffcc00;
-}
-
+/* Centrar el grid */
 .eventos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
   gap: 20px;
   padding: 20px;
+  max-width: 900px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Responsive para tablets */
+@media (max-width: 900px) {
+  .eventos-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .eventos-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 columna */
+  }
 }
 
 .evento-card {
-  background-color: #222;
-  border-radius: 10px;
-  overflow: hidden;
+  background-color: #1e1e1e;
+  border-radius: 6px;
   transition: transform 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
+  text-align: center;
 }
 
 .evento-card:hover {
@@ -36,29 +65,22 @@
 
 .evento-img {
   width: 100%;
-  height: 150px;
+  height: 200px;
   object-fit: cover;
-}
-
-.evento-info {
-  padding: 15px;
+  border-radius: 8px;
 }
 
 .ver-evento {
-  background: red;
+  background: #d32f2f;
   color: white;
   border: none;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+  transition: background 0.3s ease;
 }
 
 .ver-evento:hover {
-  background: darkred;
-}
-
-.sin-eventos {
-  font-size: 1.2rem;
-  color: gray;
+  background: #b71c1c;
 }

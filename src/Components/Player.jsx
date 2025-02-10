@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-import Hls from "hls.js"; // Importamos HLS.js
-import canales from "../data/canales"; // Importamos los datos
+import Hls from "hls.js";
+import canales from "../data/canales";
 
 const Player = () => {
   const location = useLocation();
   const [videoLinks, setVideoLinks] = useState([]);
   const [currentLink, setCurrentLink] = useState("");
   const [canalName, setCanalName] = useState("");
-  const [isHLS, setIsHLS] = useState(false); // Estado para definir si es un stream HLS
   const videoRef = useRef(null);
-  const hlsRef = useRef(null); // Guardamos la instancia de Hls.js
+  const hlsRef = useRef(null);
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
@@ -18,7 +17,6 @@ const Player = () => {
 
     if (nameParam) {
       setCanalName(nameParam);
-      console.log(`📺 Canal seleccionado: ${nameParam}`);
 
       const canalSeleccionado = Object.entries(canales).find(
         ([nombre]) => nombre === nameParam
@@ -27,8 +25,7 @@ const Player = () => {
       if (canalSeleccionado) {
         const [, enlaces] = canalSeleccionado;
         setVideoLinks(enlaces);
-        setCurrentLink(enlaces[0]); // Reproducir el primer enlace
-        setIsHLS(enlaces[0].includes(".m3u8")); // Verificar si el primer enlace es HLS
+        setCurrentLink(enlaces[0]);
       } else {
         console.error("⚠️ Error: Canal no encontrado.");
       }
@@ -36,53 +33,43 @@ const Player = () => {
   }, [location]);
 
   useEffect(() => {
-    if (!currentLink) return;
+    if (!currentLink || !videoRef.current) return;
 
-    console.log(`🔗 Cargando stream: ${currentLink}`);
-    setIsHLS(currentLink.includes(".m3u8")); // Detectamos si es un stream HLS
+    if (hlsRef.current) {
+      hlsRef.current.destroy();
+    }
 
-    if (isHLS && videoRef.current) {
-      if (hlsRef.current) {
-        hlsRef.current.destroy(); // Destruir instancia anterior antes de crear una nueva
-      }
+    if (currentLink.includes(".m3u8") && Hls.isSupported()) {
+      const hls = new Hls();
+      hlsRef.current = hls;
+      hls.loadSource(currentLink);
+      hls.attachMedia(videoRef.current);
+      
+      hls.on(Hls.Events.MANIFEST_PARSED, () => {
+        videoRef.current.play();
+      });
 
-      if (Hls.isSupported()) {
-        const hls = new Hls();
-        hlsRef.current = hls;
-        hls.loadSource(currentLink);
-        hls.attachMedia(videoRef.current);
-        
-        hls.on(Hls.Events.MANIFEST_PARSED, () => {
-          console.log("✅ MANIFEST cargado correctamente");
-          videoRef.current.play();
-        });
-
-        hls.on(Hls.Events.ERROR, (event, data) => {
-          console.error("❌ Error en HLS:", data);
-        });
-      } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
-        videoRef.current.src = currentLink;
-        videoRef.current.addEventListener("loadedmetadata", () => {
-          videoRef.current.play();
-        });
-      } else {
-        console.error("⚠️ HLS no es compatible con este navegador.");
-      }
+      hls.on(Hls.Events.ERROR, (event, data) => {
+        console.error("❌ Error en HLS:", data);
+      });
+    } else if (currentLink.includes(".m3u8")) {
+      videoRef.current.src = currentLink;
+      videoRef.current.addEventListener("loadedmetadata", () => {
+        videoRef.current.play();
+      });
     }
   }, [currentLink]);
 
   const handleLinkClick = (link) => {
-    console.log(`🖱️ Cambiando a: ${link}`);
     setCurrentLink(link);
-    setIsHLS(link.includes(".m3u8")); // Detectamos si el nuevo enlace es HLS
   };
 
   return (
     <div>
-      <h1>{canalName} - Transmisión en Vivo</h1>
+      <h1 className="titulo">⚽ Fulbo Live</h1>
       {videoLinks.length > 0 ? (
         <>
-          {isHLS ? (
+          {currentLink.includes(".m3u8") ? (
             <video ref={videoRef} controls width="800" height="450"></video>
           ) : (
             <iframe
@@ -94,7 +81,6 @@ const Player = () => {
             ></iframe>
           )}
           <div>
-            <h3>Selecciona otra opción:</h3>
             {videoLinks.map((link, index) => (
               <button
                 key={index}
@@ -109,6 +95,7 @@ const Player = () => {
       ) : (
         <h2>⚠️ Error: No hay enlaces disponibles</h2>
       )}
+      <h2 className="titulo">⚽ Bienvenido a Fulbo</h2>
     </div>
   );
 };
