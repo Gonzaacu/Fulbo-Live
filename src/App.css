@@ -5,8 +5,10 @@ body {
   margin: 0;
   display: flex;
   justify-content: center;
-  
+  font-size: 16px;
+  padding: 0 10px; /* Añadir padding para evitar que el contenido se quede pegado a los bordes */
 }
+
 
 .navbar {
   background: #d32f2f;
@@ -15,21 +17,26 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   width: 100%;
+  box-sizing: border-box; /* Esto asegura que el padding no aumente el tamaño de la barra */
 }
+
 
 .container {
   width: 100%;
-  max-width: 800px; /* Ajuste del ancho máximo player */
+  max-width: 800px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box; /* Añadido para incluir padding en el ancho */
 }
+
 
 /* Centrar el grid */
 .eventos-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas por defecto */
   gap: 20px;
   padding: 20px;
   max-width: 900px;
@@ -37,17 +44,19 @@ body {
   justify-content: center;
 }
 
-/* Responsive para tablets */
-@media (max-width: 900px) {
+/* Ajustes para tabletas */
+@media (max-width: 768px) {
   .eventos-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para tabletas */
+    gap: 15px; /* Reducir el espacio entre columnas */
   }
 }
 
-/* Responsive para móviles */
-@media (max-width: 600px) {
+/* Ajustes para móviles */
+@media (max-width: 480px) {
   .eventos-grid {
-    grid-template-columns: repeat(1, 1fr); /* 1 columna */
+    grid-template-columns: 1fr; /* 1 columna en móviles */
+    gap: 10px; /* Menor espacio entre las tarjetas */
   }
 }
 
@@ -57,17 +66,26 @@ body {
   transition: transform 0.3s ease;
   box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
   text-align: center;
+  padding: 10px; /* Añadir un poco de espacio interior */
 }
 
 .evento-card:hover {
   transform: scale(1.05);
 }
 
+/* Imágenes ajustadas */
 .evento-img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
+}
+
+/* Para móviles: ajustar la altura de las imágenes */
+@media (max-width: 480px) {
+  .evento-img {
+    height: 150px; /* Reducir la altura en dispositivos pequeños */
+  }
 }
 
 .ver-evento {
@@ -81,6 +99,10 @@ body {
   transition: background 0.3s ease;
 }
 
-.ver-evento:hover {
-  background: #b71c1c;
+/* Ajuste para móviles */
+@media (max-width: 480px) {
+  .ver-evento {
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+    padding: 6px; /* Reducir el padding */
+  }
 }

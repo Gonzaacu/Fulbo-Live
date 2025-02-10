@@ -3,22 +3,34 @@
   grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
   gap: 20px;
   padding: 20px;
-  max-width: 900px;
-  width: 100%;
+  max-width: 900px; /* Máximo ancho de la grilla */
+  width: 100%; /* Asegura que la grilla ocupe todo el espacio disponible */
   justify-content: center;
+  box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
 }
 
 /* Para tablets */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .eventos-grid {
     grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
+    gap: 15px; /* Reducir el espacio entre las tarjetas */
   }
 }
 
 /* Para móviles */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .eventos-grid {
     grid-template-columns: repeat(1, 1fr); /* 1 tarjeta por fila */
+    gap: 10px; /* Reducir el espacio entre las tarjetas */
+  }
+
+  .evento-card {
+    margin: 0 auto; /* Centrar las tarjetas en móviles */
+  }
+
+  .ver-evento {
+    padding: 8px; /* Reducir padding en botones */
+    font-size: 14px; /* Reducir tamaño de la fuente en móviles */
   }
 }
 
@@ -55,8 +67,20 @@
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+  transition: background 0.3s ease;
 }
 
 .ver-evento:hover {
   background: darkred;
+}
+
+/* Para mejorar la experiencia en pantallas muy pequeñas */
+@media (max-width: 320px) {
+  .evento-card {
+    margin: 10px 0; /* Ajustar el margen para pantallas muy pequeñas */
+  }
+
+  .evento-img {
+    height: 120px; /* Ajustar la altura de la imagen en pantallas pequeñas */
+  }
 }

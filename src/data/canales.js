@@ -20,6 +20,7 @@ const canales = {
       "https://cdn.sensa.com.ar/live/eds/FoxSportsPremium/live_dash_cld/FoxSportsPremium.mpd?ck=eyJmODk0M2QxMTRlMjUxNTFjOGFlNGY2MTIzNTFkNWE1ZiI6IjdmMzRjOWE3MGM4MzYwMjBjYmMzMjczYzQyN2ZmMjc3In0=&title=DeportesTVHD&headers=eyJvcmlnaW4iOiJodHRwczovL3BsYXllci5zZW5zYS5jb20uYXIiLCJyZWZlcmVyIjoiaHR0cHM6Ly9wbGF5ZXIuc2Vuc2EuY29tLmFyLyJ9"
     ],
     ESPN_1: [
+        "https://director.mgi9ehlj7z061brnpp28wr2x7n9wvpr10.click/v3/director/VE1YTIxZWZmZDY0YjQ2LTYzMDktZWEwNC03ZmQzLWE2NmNmNDIy/master.m3u8",
         "https://streamtp2.com/global1.php?stream=espn",
         "https://streamdz1.xyz/player/embed.php?channel=espn",
         "https://la12hd.com/vivo/canales.php?stream=espn",

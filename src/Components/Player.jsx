@@ -67,6 +67,9 @@ const Player = () => {
   return (
     <div>
       <h1 className="titulo">⚽ Fulbo Live</h1>
+      {/* Nombre del canal */}
+      {canalName && <h2>{canalName}</h2>} {/* Muestra el nombre del canal aquí */}
+
       {videoLinks.length > 0 ? (
         <>
           {currentLink.includes(".m3u8") ? (

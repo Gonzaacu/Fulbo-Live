@@ -1,53 +1,101 @@
 /* Player.css */
+
+/* Estilos para el reproductor de video */
 #videoPlayer {
-    border: 2px solid #333;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;
-    max-width: 100%;
+  border: 2px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  max-width: 100%;
+  width: 100%; /* Asegura que el video ocupe todo el ancho disponible */
+}
+
+/* Estilos de los títulos */
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  color: red;
+}
+
+h3 {
+  color: #34495e;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos de los botones */
+button {
+  background-color: #2980b9;
+  color: white;
+  padding: 15px 40px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+/* Hover de los botones */
+button:hover {
+  background-color: #3498db;
+}
+
+/* Botón deshabilitado */
+button:disabled {
+  background-color: #95a5a6;
+  cursor: not-allowed;
+}
+
+/* Estilo de párrafos de error */
+p {
+  text-align: center;
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+}
+
+/* Media Queries para hacerlo responsivo */
+@media (max-width: 768px) {
+  #videoPlayer {
+    width: 100%; /* El video ocupará el 100% del ancho */
+    height: auto;
   }
-  
-  h1 {
-    text-align: center;
-    color: #2c3e50;
-    font-family: Arial, sans-serif;
+
+  h1, h2, h3 {
+    font-size: 1.2rem; /* Ajusta el tamaño de los textos para pantallas más pequeñas */
   }
-  
-  h2 {
-    text-align: center;
-    color: red;
-  }
-  
-  h3 {
-    color: #34495e;
-    font-family: Arial, sans-serif;
-  }
-  
+
   button {
-    background-color: #2980b9;
-    color: white;
-    padding: 15px 40px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    padding: 10px 30px;
+    font-size: 14px; /* Ajusta el tamaño de los botones */
   }
-  
-  button:hover {
-    background-color: #3498db;
-  }
-  
-  button:disabled {
-    background-color: #95a5a6;
-    cursor: not-allowed;
-  }
-  
+
   p {
-    text-align: center;
-    font-size: 18px;
-    color: red;
-    font-weight: bold;
+    font-size: 16px; /* Ajusta el tamaño del texto */
   }
-  
+}
+
+@media (max-width: 480px) {
+  #videoPlayer {
+    width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3 {
+    font-size: 1rem; /* Ajusta el tamaño de los textos para pantallas más pequeñas */
+  }
+
+  button {
+    padding: 8px 20px;
+    font-size: 12px; /* Ajusta el tamaño de los botones */
+  }
+
+  p {
+    font-size: 14px; /* Ajusta el tamaño del texto */
+  }
+}
