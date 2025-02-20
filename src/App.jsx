@@ -2,26 +2,135 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Player from "./Components/Player.jsx";
-import canales from "./data/canales"; // Importamos los datos locales
+import canales from "./data/canales";
+import peliculas from "./data/peliculas";
+import series from "./data/series";
+import programas from "./data/programas";
+import otros from "./data/otros";
 
 function Home() {
   const [eventos, setEventos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [categoria, setCategoria] = useState("canales");
+
+  const categorias = { canales, peliculas, series, programas, otros };
 
   useEffect(() => {
-    const eventosArray = Object.entries(canales).map(([nombre, enlaces]) => ({
-      nombre: nombre,
-      enlace: enlaces[0],
-      imagen: `https://source.unsplash.com/300x200/?soccer`, // Imagen aleatoria de fútbol
-    }));
+    setLoading(true);
+    const eventosArray = Object.entries(categorias[categoria] || {}).map(
+      ([nombre, enlaces]) => ({
+        nombre,
+        enlaces,
+        imagen: `https://source.unsplash.com/300x200/?${categoria}`,
+      })
+    );
 
     setEventos(eventosArray);
     setLoading(false);
-  }, []);
+  }, [categoria]);
 
   return (
     <div className="container">
       <h1 className="titulo">⚽ Fulbo Live</h1>
+      
+      <nav className="menu">
+        <button onClick={() => setCategoria("canales")}>Eventos</button>
+        <button onClick={() => setCategoria("peliculas")}>Películas</button>
+        <button onClick={() => setCategoria("series")}>Series</button>
+        <button onClick={() => setCategoria("programas")}>Programas</button>
+        <button onClick={() => setCategoria("otros")}>Otros</button>
+      </nav>
+
+      {loading ? (
+        <p className="cargando">Cargando eventos...</p>
+      ) : (
+        <div className="eventos-grid">
+          {eventos.length > 0 ? (
+            eventos.map((evento, index) => (
+              <div key={index} className="evento-card">
+                <img src={evento.imagen} alt={evento.nombre} className="evento-img" />
+                <div className="evento-info">
+                  <h3>{evento.nombre}</h3>
+                  <Link 
+                    to={`/player?name=${encodeURIComponent(evento.nombre)}&categoria=${categoria}`}
+                  >
+                    <button className="ver-evento">Ver Evento</button>
+                  </Link>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="sin-eventos">No hay eventos disponibles.</p>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <Router basename="/Fulbo-Live">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/player" element={<Player />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+
+/*
+ultimo que anda
+
+import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+import Player from "./Components/Player.jsx";
+import canales from "./data/canales";
+import peliculas from "./data/peliculas";
+import series from "./data/series";
+import programas from "./data/programas";
+import otros from "./data/otros";
+
+function Home() {
+  const [eventos, setEventos] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [categoria, setCategoria] = useState("canales");
+
+  const categorias = {
+    canales,
+    peliculas,
+    series,
+    programas,
+    otros,
+  };
+
+  useEffect(() => {
+    setLoading(true);
+    const eventosArray = Object.entries(categorias[categoria] || {}).map(([nombre, enlaces]) => ({
+      nombre: nombre,
+      enlace: enlaces[0],
+      imagen: `https://source.unsplash.com/300x200/?${categoria}`,
+    }));
+
+    setEventos(eventosArray);
+    setLoading(false);
+  }, [categoria]);
+
+  return (
+    <div className="container">
+      <h1 className="titulo">⚽ Fulbo Live</h1>
+      
+      <nav className="menu">
+        <button onClick={() => setCategoria("canales")}>Eventos</button>
+        <button onClick={() => setCategoria("peliculas")}>Películas</button>
+        <button onClick={() => setCategoria("series")}>Series</button>
+        <button onClick={() => setCategoria("programas")}>Programas</button>
+        <button onClick={() => setCategoria("otros")}>Otros</button>
+      </nav>
 
       {loading ? (
         <p className="cargando">Cargando eventos...</p>
@@ -61,7 +170,7 @@ function App() {
 
 export default App;
 
-/*
+
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Link } from "react-router-dom";

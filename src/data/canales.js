@@ -5,8 +5,8 @@ const canales = {
       ""
     ],
     TNT_Sports: [
+      "https://television-libre.net/html/fl/?get=VE5UX1Nwb3J0c19IRA",
       "https://director.mgi9ehlj7z061brnpp28wr2x7n9wvpr10.click/v4/variant/VE1gTdz0mLzRnLv52bt9SMhFjdtM3ajFmc09yNzkTOxQDOxITY3kTL4MGM40COyYGNtYGO0QWLzIWZxUjNzczL.m3u8",// anda
-      "https://yxdlc29tzq.fubohd.com/tntsports/mono.m3u8?token=d953690ced1afc1e692d80bdda0f7aeb8a01bd25-88-1739173724-1739137724",//anda
       "https://la12hd.com/vivo/canales.php?stream=tntsports",// anda
       "https://streamdz1.xyz/player/embed.php?channel=tntar",// anda con publi
       "https://tucanaldeportivo.org/tntsports.php",// anda con publi
@@ -15,6 +15,7 @@ const canales = {
       "https://cdn.sensa.com.ar/live/eds/TNTSports/live_dash_cld/TNTSports.mpd?ck=eyJjMjYzNzEwNzllODkyMDZkNjNlMTQ1NDg5M2U4ODFiNiI6ImFkYWMzYzNiMzc3NGU0MTFkNmU0OTcyNGY3ZWEwZWUzIn0=&title=RusticoTV&headers=eyJvcmlnaW4iOiJodHRwczovL3BsYXllci5zZW5zYS5jb20uYXIiLCJyZWZlcmVyIjoiaHR0cHM6Ly9wbGF5ZXIuc2Vuc2EuY29tLmFyLyJ9"
     ],
     ESPN_Premiun: [
+      "https://television-libre.net/html/fl/?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE",
       "https://streamtp2.com/global1.php?stream=espnpremium",// anda
       "https://tucanaldeportivo.org/espnpremium.php",// anda con publi
       "https://la12hd.com/vivo/canales.php?stream=espnpremium",//anda
@@ -96,38 +97,7 @@ const canales = {
     ],
     TVPublica: [
       "https://la12hd.com/vivo/canal.php?stream=tvpublica",
-    ],
-    TNT_Series: [
-      "https://television-libre.net/html/fl/?get=VE5UU2VyaWVz",
-      "https://television-libre.net/html/fl/?get=VE5UU2VyaWVz",
-    ],
-    HyH: [
-      "https://television-libre.net/html/fl/?get=RGlzY292ZXJ5SG9tZUhlYWx0aEhE",
-      "https://television-libre.net/html/fl/?get=RGlzY292ZXJ5SG9tZUhlYWx0aEhE",
-    ],
-    TcL: [
-      "https://television-libre.net/html/fl/?get=VExD",
-      "https://television-libre.net/html/fl/?get=VExD",
-    ],
-    History: [
-      "https://television-libre.net/html/fl/?get=SGlzdG9yeUhE",
-      "https://television-libre.net/html/fl/?get=SGlzdG9yeUhE"
-    ],
-
-    Space: [
-      "https://television-libre.net/html/fl/?get=U3BhY2U=",
-    ],
-    Start_Channel: [
-      "https://television-libre.net/html/fl/?get=Rk9YSEQ=",
-      "https://nebunexa.co/wsd/?get=STAR_CHANNEL",
-      "https://nebunexa.co/canal/?id=STAR_CHANNEL"
-    ],
-    Disney_channel: [
-      "https://television-libre.net/html/fl/?get=RGlzbmV5Q2hhbm5lbEhE"
-    ],
-    Flow_Music: [
-      "https://television-libre.net/html/fl/?get=Rmxvd19NdXNpY19YUA=="
-    ],
+    ], 
     
   };
   
