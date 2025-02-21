@@ -7,6 +7,11 @@ import peliculas from "./data/peliculas";
 import series from "./data/series";
 import programas from "./data/programas";
 import otros from "./data/otros";
+import canalesImages from "./data/canalesImages";
+import peliculasImages from "./data/peliculasImages";
+import seriesImages from "./data/seriesImages";
+import programasImages from "./data/programasImages";
+import otrosImages from "./data/otrosImages";
 
 function Home() {
   const [eventos, setEventos] = useState([]);
@@ -14,20 +19,31 @@ function Home() {
   const [categoria, setCategoria] = useState("canales");
 
   const categorias = { canales, peliculas, series, programas, otros };
+  const categoriasImages = { 
+    canales: canalesImages, 
+    peliculas: peliculasImages, 
+    series: seriesImages, 
+    programas: programasImages, 
+    otros: otrosImages 
+  };
 
   useEffect(() => {
     setLoading(true);
     const eventosArray = Object.entries(categorias[categoria] || {}).map(
-      ([nombre, enlaces]) => ({
-        nombre,
-        enlaces,
-        imagen: `https://source.unsplash.com/300x200/?${categoria}`,
-      })
+        ([nombre, data]) => {
+            const imagenUrl = categoriasImages[categoria]?.[nombre] || `https://source.unsplash.com/300x200/?${categoria}`;
+            
+            return {
+                nombre,
+                enlaces: data.enlaces || [],
+                imagen: imagenUrl,
+            };
+        }
     );
 
     setEventos(eventosArray);
     setLoading(false);
-  }, [categoria]);
+}, [categoria]);
 
   return (
     <div className="container">
