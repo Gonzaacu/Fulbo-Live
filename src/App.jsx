@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import "./App.css";
 import Player from "./Components/Player.jsx";
 import canales from "./data/canales";
@@ -14,9 +14,13 @@ import programasImages from "./data/programasImages";
 import otrosImages from "./data/otrosImages";
 
 function Home() {
+  const location = useLocation();
+  const urlParams = new URLSearchParams(location.search);
+  const categoriaInicial = urlParams.get("categoria") || localStorage.getItem("categoria") || "canales";
+
   const [eventos, setEventos] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [categoria, setCategoria] = useState("canales");
+  const [categoria, setCategoria] = useState(categoriaInicial);
 
   const categorias = { canales, peliculas, series, programas, otros };
   const categoriasImages = { 
@@ -28,10 +32,11 @@ function Home() {
   };
 
   useEffect(() => {
+    localStorage.setItem("categoria", categoria);
     setLoading(true);
     const eventosArray = Object.entries(categorias[categoria] || {}).map(
         ([nombre, data]) => {
-            const imagenUrl = categoriasImages[categoria]?.[nombre] || `https://source.unsplash.com/300x200/?${categoria}`;
+            const imagenUrl = categoriasImages[categoria]?.[nombre] || `https://source.unsplash.com/200x100/?${categoria}`;
             
             return {
                 nombre,
@@ -43,7 +48,7 @@ function Home() {
 
     setEventos(eventosArray);
     setLoading(false);
-}, [categoria]);
+  }, [categoria]);
 
   return (
     <div className="container">
