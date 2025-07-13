@@ -14,7 +14,7 @@ const canales = {
       "https://streamdz4.lat/player/embed.php?channel=tntpremium"
     ],
     ESPN_Premiun: [
-      "https://television-libre.net/html/fl/?get=Rm94X1Nwb3J0c19QcmVtaXVuX0hE",
+      "chrome-extension://opmeopcambhfimffbomjgemehjkbbmji/pages/player.html#https://edge-live32-sl.cvattv.com.ar/tok_eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOiIxNzUyNTE2MTkwIiwic2lwIjoiNDUuMjI4LjY3LjMwIiwicGF0aCI6Ii9saXZlL2M3ZWRzL0ZveF9TcG9ydHNfUHJlbWl1bl9IRC9TQV9MaXZlX2Rhc2hfZW5jLyIsInNlc3Npb25fY2RuX2lkIjoiYTcyMDE2MzE5NzUzZjVjMyIsInNlc3Npb25faWQiOiIiLCJjbGllbnRfaWQiOiIiLCJkZXZpY2VfaWQiOiIiLCJtYXhfc2Vzc2lvbnMiOjAsInNlc3Npb25fZHVyYXRpb24iOjAsInVybCI6Imh0dHBzOi8vMjAxLjIzNS42Ni4xMTQiLCJhdWQiOiIxMDAiLCJzb3VyY2VzIjpbODUsMTQ0LDg2LDg4XX0=.rbxIhzBELH7epsVqCQT4G_9zUjMBBLjQfa-TqdALzURkEknZfBjywNEn8Z4RC5qmr8GALqorPyAbRxAB3G7_Ew==/live/c7eds/Fox_Sports_Premiun_HD/SA_Live_dash_enc/Fox_Sports_Premiun_HD.mpd?ck=IjRjMjMwZGJjN2Y2YTRiZmE2YWQwYWE3M2ZmNzkyMzc0IjoiNDE4NmE3YzJhMTVmNTkwYTkzOTk4ODZmZWFlYzQyNTci&headers=eyJvcmlnaW4iOiJodHRwczovL3BvcnRhbC5hcHAuZmxvdy5jb20uYXIvIiwicmVmZXJlciI6Imh0dHBzOi9wb3J0YWwuYXBwLmZsb3cuY29tLmFyLyJ9",
       "https://streamtp2.com/global1.php?stream=espnpremium",// anda
       "https://la12hd.com/vivo/canales.php?stream=espnpremium",//anda con publi hd
       "https://tucanaldeportivo.org/espnpremium.php",// anda con publi
